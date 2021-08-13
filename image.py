@@ -2,7 +2,6 @@ import base64
 import os
 from cv2 import cv2
 import numpy as np
-# import matplotlib.pyplot as plt
 import requests
 
 
@@ -40,12 +39,6 @@ class Image:
         ocr_img = cv2.imencode(".jpg", resize_img)[1]
 
         self.image_byte_data = ocr_img.tobytes()
-
-        # plt.figure()
-        # plt.imshow(resize_img)
-        # plt.show()
-
-        print("DONE")
 
     def ocr(self):
         API_URL = "https://dapi.kakao.com/v2/vision/text/ocr"
